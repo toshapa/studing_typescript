@@ -1,13 +1,13 @@
 "use strict";
-const b = 'hello';
-let number1 = 123123;
-let number2 = 21345;
-const sum = number1 + number2;
+var b = 'hello';
+var number1 = 123123;
+var number2 = 21345;
+var sum = number1 + number2;
 console.log(sum);
 function howYouCanCall(userEnter) {
-    return `${userEnter.name} ${userEnter.surname}`;
+    return "".concat(userEnter.name, " ").concat(userEnter.surname);
 }
-const user = {
+var user = {
     name: 'Anton',
     surname: 'Pechatnov',
     country: 'Ukraine',

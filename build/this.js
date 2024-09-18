@@ -14,28 +14,34 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var Logger = /** @class */ (function () {
-    function Logger() {
+var AnotherPayment = /** @class */ (function () {
+    function AnotherPayment() {
+        this.date = new Date();
     }
-    Logger.prototype.printDate = function (date) {
-        this.log(date.toString());
+    AnotherPayment.prototype.getDate = function () {
+        return this.date;
     };
-    return Logger;
+    AnotherPayment.prototype.getArrowDate = function () {
+        return this.date;
+    };
+    return AnotherPayment;
 }());
-var MyLogger = /** @class */ (function (_super) {
-    __extends(MyLogger, _super);
-    function MyLogger() {
+var newDate = new AnotherPayment();
+var newUser1 = {
+    id: 1,
+    payment: newDate.getDate.bind(newDate),
+};
+var PaymentPersistant = /** @class */ (function (_super) {
+    __extends(PaymentPersistant, _super);
+    function PaymentPersistant() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    MyLogger.prototype.log = function (message) {
-        console.log(message);
+    PaymentPersistant.prototype.save = function () {
+        return _super.prototype.getDate.call(this);
     };
-    MyLogger.prototype.logWithDate = function (message) {
-        this.printDate(new Date());
-        this.log(message);
-    };
-    return MyLogger;
-}(Logger));
-var logger = new MyLogger();
-logger.logWithDate("sho");
+    return PaymentPersistant;
+}(AnotherPayment));
+console.log(newDate.getDate());
+console.log(newUser1.payment());
+console.log(newDate.getArrowDate());
+// console.log(new PaymentPersistant().getDate())

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -56,10 +57,10 @@ var Cart = /** @class */ (function () {
     };
     Cart.prototype.chekcOut = function () {
         if (this.product.length === 0) {
-            throw new Error("Don`t hava any product");
+            throw new Error("Don`t have any product");
         }
         if (!this.delivery) {
-            throw new Error("Don`t hava any product");
+            throw new Error("Don`t have any product");
         }
         return { success: true };
     };

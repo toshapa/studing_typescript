@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,31 +14,21 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var UserBuilder = /** @class */ (function () {
-    function UserBuilder() {
+var PaymentDecloration = /** @class */ (function () {
+    function PaymentDecloration(id) {
+        this.status = "paided";
+        this.id = id;
     }
-    UserBuilder.prototype.setName = function (name) {
-        this.name = name;
-        return this;
+    PaymentDecloration.prototype.willPay = function () {
+        this.status = "new";
     };
-    UserBuilder.prototype.isAdmin = function () {
-        return this instanceof AdminBuilder;
-    };
-    return UserBuilder;
+    return PaymentDecloration;
 }());
-var AdminBuilder = /** @class */ (function (_super) {
-    __extends(AdminBuilder, _super);
-    function AdminBuilder() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var PaidedBill = /** @class */ (function (_super) {
+    __extends(PaidedBill, _super);
+    function PaidedBill() {
+        var id = Math.random();
+        return _super.call(this, id) || this;
     }
-    return AdminBuilder;
-}(UserBuilder));
-var response = new UserBuilder().setName("Hello Kitty");
-var response2 = new AdminBuilder().setName("Spanch Bob");
-var userView = new UserBuilder();
-if (userView.isAdmin()) {
-    console.log(userView);
-}
-else {
-    console.log(userView);
-}
+    return PaidedBill;
+}(PaymentDecloration));

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,34 +14,31 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var AnotherPayment = /** @class */ (function () {
-    function AnotherPayment() {
-        this.date = new Date();
+var UserBuilder = /** @class */ (function () {
+    function UserBuilder() {
     }
-    AnotherPayment.prototype.getDate = function () {
-        return this.date;
+    UserBuilder.prototype.setName = function (name) {
+        this.name = name;
+        return this;
     };
-    AnotherPayment.prototype.getArrowDate = function () {
-        return this.date;
+    UserBuilder.prototype.isAdmin = function () {
+        return this instanceof AdminBuilder;
     };
-    return AnotherPayment;
+    return UserBuilder;
 }());
-var newDate = new AnotherPayment();
-var newUser1 = {
-    id: 1,
-    payment: newDate.getDate.bind(newDate),
-};
-var PaymentPersistant = /** @class */ (function (_super) {
-    __extends(PaymentPersistant, _super);
-    function PaymentPersistant() {
+var AdminBuilder = /** @class */ (function (_super) {
+    __extends(AdminBuilder, _super);
+    function AdminBuilder() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    PaymentPersistant.prototype.save = function () {
-        return _super.prototype.getDate.call(this);
-    };
-    return PaymentPersistant;
-}(AnotherPayment));
-console.log(newDate.getDate());
-console.log(newUser1.payment());
-console.log(newDate.getArrowDate());
-// console.log(new PaymentPersistant().getDate())
+    return AdminBuilder;
+}(UserBuilder));
+var response = new UserBuilder().setName("Hello Kitty");
+var response2 = new AdminBuilder().setName("Spanch Bob");
+var userView = new UserBuilder();
+if (userView.isAdmin()) {
+    console.log(userView);
+}
+else {
+    console.log(userView);
+}
