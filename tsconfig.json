@@ -119,6 +119,8 @@
         "src/test.ts",
         "src/testClassTS.ts",
         "src/testClass2.ts",
-        "src/test1.ts"
+        "src/test1.ts",
+        "src/UserBuilder.ts",
+        "src/typescriptExtends.ts"
     ]
 }
