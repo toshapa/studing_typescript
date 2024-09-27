@@ -107,20 +107,14 @@
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
         "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
-    "include": [
-        "src/*",
-        "src/testMethodsClass.ts",
-        "src/testClassTS.ts",
-        "src/testClass2.ts",
-        "src/test1.ts",
-        "src/test.ts"
-    ],
     "exclude": [
         "src/test.ts",
         "src/testClassTS.ts",
         "src/testClass2.ts",
         "src/test1.ts",
         "src/UserBuilder.ts",
-        "src/typescriptExtends.ts"
-    ]
+        "src/typescriptExtends.ts",
+        "src/abstract.ts"
+    ],
+    "include": ["./src/classGeneric.ts"]
 }
