@@ -116,5 +116,5 @@
         "src/typescriptExtends.ts",
         "src/abstract.ts"
     ],
-    "include": ["./src/classGeneric.ts"]
+    "include": ["./src/keyOf.ts"]
 }
