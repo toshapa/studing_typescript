@@ -116,5 +116,5 @@
         "src/typescriptExtends.ts",
         "src/abstract.ts"
     ],
-    "include": ["./src/keyOf.ts"]
+    "include": ["./src/validationForms.ts"]
 }
