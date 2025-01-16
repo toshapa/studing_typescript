@@ -33,5 +33,12 @@ function getData(id: number): User {
     return new User(id, "Jack")
 }
 
-type RT = ReturnType<typeof getData>
+type RT0 = ReturnType<typeof getData>
+type RT1 = ReturnType<() => void>
+type RT2 = ReturnType<<T>() => T>
+type RT3 = ReturnType<<T extends string>() => T>
 type PT = Parameters<typeof getData>[0]
+
+type CP = ConstructorParameters<typeof User>
+
+type IT = InstanceType<typeof User>
