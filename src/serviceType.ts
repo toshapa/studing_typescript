@@ -19,11 +19,11 @@ interface PaymentPersistent {
     to: string
 }
 
-type Payment = Omit<PaymentPersistent, "sum">
+type PaymentMethod = Omit<PaymentPersistent, "sum">
 type PaymentResistant = Pick<PaymentPersistent, "sum" | "to">
 
-type ExtractEx = Extract<"from" | "to" | Payment, string>
-type ExcludeEx = Exclude<"from" | "to" | Payment, string>
+type ExtractEx = Extract<"from" | "to" | PaymentMethod, string>
+type ExcludeEx = Exclude<"from" | "to" | PaymentMethod, string>
 
 class User {
     constructor(public id: number, name: string) {}

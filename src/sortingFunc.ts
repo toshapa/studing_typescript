@@ -1,4 +1,4 @@
-const data = [
+const dataSource = [
     { id: 1, name: "Sergii" },
     { id: 2, name: "Anton" },
     { id: 3, name: "Chi" },
@@ -9,11 +9,11 @@ interface ID {
 }
 
 function getSortingMethod<T extends ID>(
-    data: T[],
+    dataSource: T[],
     type: "asc" | "desc" = "asc"
 ): T[] {
     // function methodSort()
-    return data.sort((a, b) => {
+    return dataSource.sort((a, b) => {
         switch (type) {
             case "asc":
                 return a.id - b.id
@@ -23,5 +23,5 @@ function getSortingMethod<T extends ID>(
     })
 }
 
-console.log(getSortingMethod(data, "desc"))
-console.log(getSortingMethod(data))
+console.log(getSortingMethod(dataSource, "desc"))
+console.log(getSortingMethod(dataSource))
